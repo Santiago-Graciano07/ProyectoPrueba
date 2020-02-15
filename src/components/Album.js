@@ -12,7 +12,7 @@ class Album extends React.Component {
                     <img src={albImage} className="image-album"></img>
                 </div>
                 <div className="col-11 color-div">
-                        <Link to={urlSongs} >{name}</Link>
+                        <Link to={urlSongs}  className="link">{name}</Link>
                         <p>Canciones:{total_canc}</p>
                             <hr></hr>
                 </div>
