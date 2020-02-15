@@ -1,5 +1,6 @@
 import React from 'react'
 import { getSongsAlbum } from "../services/songs";
+import { getArtistAlbum } from "../services/albumes";
 import Menu from "../pages/Menu";
 import Songs from './Songs'
 class SongsContainer extends React.Component {
@@ -15,22 +16,21 @@ class SongsContainer extends React.Component {
         const idAlbum = this.props.match.params.idAlbum;
         const responseJson = await getSongsAlbum(idAlbum);
         this.setState({ songs: responseJson[idAlbum - 1].songs });
-        console.log(responseJson[idAlbum-1].songs);
     }
-
 
     render() {
         const {songs} = this.state
         return (
           <>
-            <Menu></Menu>
-            <section className="containes-album">
-              <h1>Foto de album</h1>
-            </section>
-            <section className="albums-artist">
-              <div className="container div-principal-album">
-                <div className="list-group">
-                    <h4>Canciones</h4>
+          <div class="container">
+              <Menu></Menu>
+              <section className="containes-album">
+                <h1>Foto de album</h1>
+              </section>
+              <section className="albums-artist">
+                <div className="container div-principal-album">
+                  <div className="list-group">
+                    <h6 className="title_list">Canciones</h6>
                     {songs.map(song => (
                       <Songs
                         id={song.id}
@@ -40,9 +40,10 @@ class SongsContainer extends React.Component {
                         duration_ms={song.duration_ms}
                       />
                     ))}
+                  </div>
                 </div>
-              </div>
-            </section>
+              </section>
+          </div>
           </>
         );
 

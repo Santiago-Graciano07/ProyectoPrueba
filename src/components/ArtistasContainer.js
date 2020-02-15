@@ -2,6 +2,7 @@ import React from 'react'
 import Artistas from './Artistas'
 import { getArtistas } from "../services/artistas";
 import Menu from '../pages/Menu'
+import Footer from '../pages/Footer'
 
 class ArtistasContainer extends React.Component {
     constructor(props){
@@ -40,6 +41,7 @@ class ArtistasContainer extends React.Component {
 
                     }
                 </section>
+                <Footer></Footer>
             </React.Fragment>
         )
 
