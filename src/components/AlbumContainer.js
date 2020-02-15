@@ -3,6 +3,7 @@ import { getArtistAlbum } from "../services/albumes";
 import { getArtistas } from "../services/artistas";
 import Album from './Album'
 import Menu from "../pages/Menu";
+import { MDBRow, MDBCol, MDBIcon } from "mdbreact";
 
 class AlbumContainer extends Component {
     constructor(props){
@@ -12,7 +13,8 @@ class AlbumContainer extends Component {
             albunes: [],
             isFetch: true,
             idArtista: this.props.match.params.idArtist,
-            imgArtista: ''
+            imgArtista: '',
+            nombreArtista: ''
         }
     }
 
@@ -20,25 +22,28 @@ class AlbumContainer extends Component {
        const idArt = this.props.match.params.idArtist
        const responseJson = await getArtistAlbum(idArt)
        const responseJsonArt = await getArtistas()
-      this.setState({ albunes: responseJson[idArt - 1].albums, imgArtista: responseJsonArt[idArt - 1].image, isFetch: false });
+     this.setState({ albunes: responseJson[idArt - 1].albums, imgArtista: responseJsonArt[idArt - 1].image, nombreArtista: responseJsonArt[idArt - 1].name, isFetch: false });
 
     }
 
 
     render() {
-      const { albunes, isFetch, imgArtista} = this.state
+      const { albunes, isFetch, imgArtista, nombreArtista} = this.state
 
         if (isFetch){
             return 'Loading'
         }
         return (
           <>
-          <div className="container">
+            <div className="container">
               <Menu></Menu>
               <section className="containes-album center">
                 <img src={imgArtista} className="img_principal_album"></img>
-                <h4>nombre</h4>
-                <i class="fas fa-cloud"></i>
+                <h4>
+                  {nombreArtista}
+                  <MDBIcon icon="star" className="icon" />
+                  <span>22.2</span>
+                </h4>
               </section>
               <section className="albums-artist">
                 <div className="container div-principal-album">
@@ -56,8 +61,7 @@ class AlbumContainer extends Component {
                   </ul>
                 </div>
               </section>
-          </div>
-          
+            </div>
           </>
         );
     }
