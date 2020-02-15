@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { MDBRow, MDBCol, MDBIcon } from "mdbreact";
 
 class Songs extends React.Component {
 
@@ -8,12 +9,18 @@ class Songs extends React.Component {
         return (
           <li className="list-group-item color-div">
             <div className="row color-div">
-              {/* <div className="col-1 color-div div-image">
-                        <img src={albImage} className="image-album"></img>
-                    </div> */}
-              <div className="col-11 color-div">
-                <Link to={preview_url}>{name}</Link>
+              <div className="col-1 color-div div-image">
+                        <MDBIcon icon="music" />
+                    </div>
+              <div className="col-9 color-div">
+                <Link to="/play" className="link">{name}</Link>
                 <p>Duración:{duration_ms}</p>
+                <audio>
+                  <source
+                    src="https://nubecolectiva.com/blog/tutos/demos/renderizando_elementos_multimedia_react/mp3/cancion.mp3"
+                    type="audio/mpeg"
+                  />
+                </audio>
                 <hr></hr>
               </div>
             </div>

@@ -11,7 +11,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={ArtistasContainer}></Route>
       <Route exact path= "/album/:idArtist" component={AlbumContainer}></Route>
-      <Route exact path="/songs/:idAlbum" component={SongsContainer}></Route>
+      <Route exact path="/songs/:idAlbum/:nombreAlbum" component={SongsContainer}></Route>
       <Route component={NotFound}></Route>
     </Switch>
   </BrowserRouter>

@@ -73,14 +73,16 @@ hr{
     background-color: aliceblue;
 }
 .div-image{
+    flex: 0 0 3% !important;
     padding-left:35px !important;
+    padding-right:0px !important;
 }
 
 .img_principal_album{
     position: relative;
     left: 40%;
     border-radius: 50% 50% 10% 60%;
-    margin-bottom: 50px;
+    margin-top: 30px
 }
 h4{
     position: relative;
@@ -89,6 +91,7 @@ h4{
 .title_list{
     color: aliceblue;
     margin-left: 30px;
+    padding-top: 20px;
 }
 .icon{
     color: yellow;
@@ -112,4 +115,16 @@ span{
 }
 .link:hover{
     color: aliceblue
+}
+.icon_play_album{
+    float: right;
+}
+.div-list-album{
+    position: relative;
+    left: 14%;
+}
+.nombre-album{
+    position: relative;
+    top: 40%;
+    font-size: 400%;
 }

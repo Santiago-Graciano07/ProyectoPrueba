@@ -47,18 +47,20 @@ class AlbumContainer extends Component {
               </section>
               <section className="albums-artist">
                 <div className="container div-principal-album">
-                  <ul className="list-group">
-                    <h6 className="title_list">Albumes</h6>
-                    {albunes.map(albms => (
-                      <Album
-                        id={albms.id}
-                        name={albms.name}
-                        albImage={albms.image}
-                        total_canc={albms.total_tracks}
-                        urlSongs={`/songs/${albms.id}`}
-                      />
-                    ))}
-                  </ul>
+                  <div className="col-10 div-list-album">
+                    <ul className="list-group">
+                      <h6 className="title_list">Albumes</h6>
+                      {albunes.map(albms => (
+                        <Album
+                          id={albms.id}
+                          name={albms.name}
+                          albImage={albms.image}
+                          total_canc={albms.total_tracks}
+                          urlSongs={`/songs/${albms.id}/${albms.name}`}
+                        />
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </section>
             </div>
