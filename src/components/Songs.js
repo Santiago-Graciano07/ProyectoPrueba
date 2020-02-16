@@ -13,7 +13,7 @@ class Songs extends React.Component {
                         <MDBIcon icon="music" />
                     </div>
               <div className="col-9 color-div">
-                <Link to="/play" className="link">{name}</Link>
+                <Link to="play" className="link">{name}</Link>
                 <p>Duración:{duration_ms}</p>
                 <audio>
                   <source

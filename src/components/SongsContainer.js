@@ -1,6 +1,5 @@
 import React from 'react'
 import { getSongsAlbum } from "../services/songs";
-import { getArtistAlbum } from "../services/albumes";
 import Menu from "../pages/Menu";
 import Songs from './Songs'
 class SongsContainer extends React.Component {
@@ -28,7 +27,9 @@ class SongsContainer extends React.Component {
             <div class="container">
               <Menu></Menu>
               <section className="containes-album">
-                <h1 className="img_principal_album nombre-album">{nombreAlbum}</h1>
+                <div className="center-text div-album-nombre">
+                  <h1 className="nombre-album">{nombreAlbum}</h1>
+                </div>
               </section>
               <section className="albums-artist">
                 <div className="container div-principal-album">

@@ -128,3 +128,8 @@ span{
     top: 40%;
     font-size: 400%;
 }
+
+.div-album-nombre{
+    text-align:center;
+    padding-top: 50px;
+}
