@@ -1,4 +1,7 @@
 import React from "react";
+/**
+ * renderisa footer para la pagina
+ */
 
 class Footer extends React.Component {
     render() {

@@ -4,6 +4,11 @@ import { getArtistas } from "../services/artistas";
 import Menu from '../pages/Menu'
 import Footer from '../pages/Footer'
 
+/**
+ * Tiene la funcionalidad para obtener todos los artistas  mostrarlos
+ * de forma ordenada
+ */
+
 class ArtistasContainer extends React.Component {
     constructor(props){
         super(props)
@@ -14,6 +19,9 @@ class ArtistasContainer extends React.Component {
         }
     }
 
+    /**
+     * encargada de hacer peticion a api para obtener todos los artistas
+     */
     async componentDidMount () {
         const responseJson = await getArtistas()
         this.setState({ artistas: responseJson, isFetch: false });
@@ -24,7 +32,12 @@ class ArtistasContainer extends React.Component {
         const { artistas, isFetch} = this.state
 
         if(isFetch) {
-            return 'Loading'
+            return (
+                <div>
+                    <h3>Loading...</h3>
+                </div>
+
+            );
         }
 
         return(

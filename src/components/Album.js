@@ -1,6 +1,16 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import { MDBRow, MDBCol, MDBIcon } from "mdbreact";
+import { MDBIcon } from "mdbreact";
+
+/**
+ * clase encargada de mostrar todo el listado de los albunes
+ * de forma ordenada, se coloca un etiqueta <li></li>
+ * tiene constantes:
+ * id: id del album
+ * name: nombre del album
+ * :albImage: url imagen del album
+ * total_canc: canciones que contiene el album
+ */
 
 class Album extends React.Component {
 
@@ -15,7 +25,7 @@ class Album extends React.Component {
               <div className="col-9 color-div">
                 <Link to={urlSongs} className="link">
                   {name}
-                  {/* <MDBIcon icon="play" className="" /> */}
+                  <MDBIcon icon="play" className="icon-play" />
                 </Link>
                 <p>Canciones:{total_canc}</p>
                 <hr></hr>

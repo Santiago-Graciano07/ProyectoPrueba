@@ -16,6 +16,12 @@ img {
     margin-top: 0;
     position: relative;
     opacity: 0.5;
+    border-color:none;
+}
+
+img:hover {
+    -webkit-transform:scale(1.2);
+    transform:scale(1.2);
 }
 
 .name_artist{
@@ -132,4 +138,17 @@ span{
 .div-album-nombre{
     text-align:center;
     padding-top: 50px;
+}
+.icon-play{
+    position: relative;
+    float: right;
+}
+
+.play-container{
+    height: 500px;
+}
+
+audio {
+    position: relative;
+    left: 400px;
 }

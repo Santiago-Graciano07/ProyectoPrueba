@@ -2,6 +2,12 @@ import React from 'react'
 import { getSongsAlbum } from "../services/songs";
 import Menu from "../pages/Menu";
 import Songs from './Songs'
+/**
+ * clase la cual tiene parte de la funcionalidad para mostra el listado de las canciones
+ * recorre el array de las canciones y renderisa parte de la pantalla
+ * con titulo del album que contine las canciones
+ */
+
 class SongsContainer extends React.Component {
 
     constructor(props) {
@@ -43,11 +49,12 @@ class SongsContainer extends React.Component {
                           spotify_url={song.spotify_url}
                           preview_url={song.preview_url}
                           duration_ms={song.duration_ms}
+                          urlcancion={`/play/cancion/${song.preview_url}`}
                         />
                       ))}
                     </ul>
                   </div>
-                  </div>
+                </div>
               </section>
             </div>
           </>
